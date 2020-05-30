@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const ItemModel = require('../model/item');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/item/preview', async (req, res, next) => {
+  const result = await ItemModel.gahuizang();
+
+  res.json(result);
 });
 
 module.exports = router;
