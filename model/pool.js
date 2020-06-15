@@ -1,7 +1,6 @@
 const poolPromise = require('../config/database');
 
 
-
 module.exports = { 
 
     queryParam: async (query) => {

@@ -1,11 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const ItemModel = require('../model/item');
+var express = require('express');
+var router = express.Router();
 
-router.get('/item/preview', async (req, res, next) => {
-  const result = await ItemModel.gahuizang();
+const searchController = require('../controller/search');
 
-  res.json(result);
-});
+//인기 검색어
+router.get('/search', searchController.getSearch);
 
 module.exports = router;
